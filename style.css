@@ -69,6 +69,10 @@ h2 {
     margin-left: 35px;
 }
 
+.prodImage:hover {
+    border: 2px solid rgb(173,216,230);
+}
+
 .prodName {
     font-family: arial, sans;
     font-size:12px;
@@ -175,4 +179,8 @@ h2 {
 
 .backgroundRight {
     background-image:url("images/btnRightDesability.png");
+}
+
+.prodRecommend-grid .prodRecommend:hover {
+    background: linear-gradient(rgb(215,234,249), white);    
 }

@@ -18,10 +18,33 @@
 // Send request
 //request.send();
 
+function createNode(element) {
+    return document.createElement(element);
+}
 
+function append(parent, el) {
+    return parent.appendChild(el);
+}
 
-fetch('http://localhost:3000/products/2')
-.then(resp => resp.json())
-.then(data => console.log(data))
-.catch(error => console.log(error))
+function searchItems() {
+    const businessId = document.getElementById("businessIdInput").value;
+    const url = 'http://localhost:3000/products/' + businessId; 
+    
+    const ul = document.getElementById('dataProd');
+    const prodImageAux = document.getElementById('prodImage');
+    const prodNameAux = document.getElementById('prodName');
+    const prodPriceAux = document.getElementById('prodPrice');
+    const prodPayCondAux = document.getElementById('prodPayCond');
+
+    fetch(url)
+    .then(resp => resp.json())
+    .then(function(result) {
+        prodRef = result.data.references.item[0];
+        prodImageAux.src = prodRef.imageName;
+        prodNameAux.innerHTML = `${prodRef.name}`
+        prodPriceAux.innerHTML = `${prodRef.price}`
+        prodPayCondAux.innerHTML = `${prodRef.productInfo.paymentConditions}`;
+    })
+    .catch(error => console.log(error))
+}
 

@@ -1,6 +1,6 @@
 body {
-    max-width: 500px;
-    margin:auto;
+    max-width: 70%;
+    margin:0 auto;
 }
 
 input[type=text] {
@@ -31,4 +31,55 @@ input[type=text] {
 h2 {
     text-align: center;
     font-family: "Courier New", Monospace;
+}
+
+.carrossel {
+    border: 1px solid rgb(2, 13, 20);
+    width:100%;
+    height: 280px;
+}
+
+.prodRefBox {
+    border: 1px solid rgb(158, 11, 80);
+    width: 170px;
+    height: 280px;
+}
+
+.headerProdRefBox {
+    border: 1px solid rgb(11, 14, 158);
+    width: 93%;
+    padding: 10px 5px;
+    font-family: arial, sans;
+    font-weight: bold;
+}
+
+.prodRef {
+    border: 1px solid rgb(11, 158, 85);
+    width: 94%;
+    padding:5px;
+    height: 200px;
+}
+
+.prodImage {
+    width: 80%;
+    height: 120px;
+    margin-left: 15px;
+}
+
+.prodName {
+    font-family: arial, sans;
+    font-size:12px;
+}
+
+.prodLabel {
+    font-family: arial, sans;
+    font-size:11px;
+    color:red;
+}
+
+.prodPrice, .prodPayCond {
+    font-family: arial, sans;
+    font-size:15px;
+    color:red;
+    font-weight: bold;
 }

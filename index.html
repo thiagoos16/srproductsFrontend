@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <title>Sistema de Recomedação</title>
   
-        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet"  type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-        <h2> Sistema de Recomendação <h2>
+        <h2> Sistema de Recomendação </h2>
         
-        <div>
+        <div id="form">
             <input type="text" name="businessId" id="businessIdInput" placeholder="Informe o BusinessId de um Produto." > 
-            <button name="btn-search" id="btnSearch" class="btnSearch" title="Pesquisar"> 
+            <button name="btn-search" id="btnSearch" class="btnSearch" title="Pesquisar" onclick="searchItems()"> 
                 <i class="fa fa-search"></i>
             </button>
         </div>
+
+        <div class="carrossel">
+            <div class="prodRefBox">
+                <div class="headerProdRefBox">
+                    Você visitou:
+                </div>
+                <div class="prodRef">
+                    <img class="prodImage" id="prodImage" src="" alt="Prod Ref Image">
+                    <span class="prodName" id="prodName"></span> 
+                    </br>
+                    <label class="prodLabel">Por:</label> <span class="prodPrice" id="prodPrice"></span>
+                    </br>
+                    <span class="prodPayCond" id="prodPayCond"></span>
+                    </br>    
+                    <label class="prodLabel">sem juros</label>
+                    <ul id="dataProd"></ul>   
+                </div>
+            </div>
+            <div class="prodListBox">
+            </div>
+        <div>
                 
         <script src="script.js"></script>
     </body>
+
 </html>

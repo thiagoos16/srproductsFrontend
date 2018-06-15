@@ -34,37 +34,39 @@ h2 {
 }
 
 .carrossel {
-    border: 1px solid rgb(2, 13, 20);
+    border: 0px solid rgb(2, 13, 20);
     width:100%;
     height: 280px;
     display: flex;
 }
 
 .prodRefBox {
-    border: 1px solid rgb(158, 11, 80);
-    width: 170px;
+    border: 0px solid rgb(158, 11, 80);
+    width: 285px;
     height: 280px;
 }
 
 .headerProdRefBox {
-    border: 1px solid rgb(11, 14, 158);
-    width: 93%;
+    border: 0px solid rgb(11, 14, 158);
+    width: 100%;
     padding: 10px 5px;
     font-family: arial, sans;
     font-weight: bold;
+    background: linear-gradient(rgb(239,247,254), rgb(215,234,249)); 
+    color: rgb(6,104,154)
 }
 
 .prodRef {
-    border: 1px solid rgb(11, 158, 85);
+    border: 0px solid rgb(11, 158, 85);
     width: 94%;
     padding:5px;
     height: 200px;
 }
 
 .prodImage {
-    width: 80%;
+    width: 65%;
     height: 120px;
-    margin-left: 15px;
+    margin-left: 35px;
 }
 
 .prodName {
@@ -86,23 +88,34 @@ h2 {
 }
 
 .sliderBox {
-    border: 1px solid rgb(216, 171, 21);
+    border: 0px solid rgb(216, 171, 21);
     height: 280px;
     width: 100%;
 }
 
+.slider-body {
+    display: flex;
+}
+
 .headerSliderBox {
-    border: 1px solid rgb(11, 14, 158);
-    width: 92.5%;
+    border: 0px solid rgb(11, 14, 158);
+    width: 88.9%;
     padding: 10px 30px;
     font-family: arial, sans;
     font-weight: bold;
+    background: linear-gradient(rgb(239,247,254), rgb(215,234,249)); 
+    color: rgb(6,104,154);
 }
 
 .recommendList {
-    border: 1px solid rgb(70, 20, 206);
+    border: 0px solid rgb(70, 20, 206);
     width:650px;
     overflow:hidden;
+}
+
+.prodReference {
+    border-right: 1px solid rgb(209,209,209);
+    width: 100%;
 }
 
 .home-grid.prodRecommend-grid.prodRecommend-grid--max-3 {
@@ -118,44 +131,20 @@ h2 {
     width: 208px;
 }
 
-.prodRecommend-grid .prodRecommend {
-    border: 1px solid rgb(11, 158, 85);
+.prodReference .prodRecommend, .prodRecommend-grid .prodRecommend {
+    border: 0px solid rgb(11, 158, 85);
     margin-left: 0;
     background: white;
     padding:5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
     float: left;
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #888;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    position: absolute;
-    right: 15%;
-    border-radius: 3px 0 0 3px;
-}
-
 .sliderButtonContainer {
-    bottom: 0;
     display: block;
-    padding: 0;
-    width: 24px;
-    position: absolute;
-    top: 40%;
+    padding-top: 13%;
     z-index: 1;
-    border: 1px solid rgba(28, 13, 236, 0.822);
+    border: 0px solid rgba(28, 13, 236, 0.822);
 }
 
 .sliderButton {
@@ -166,14 +155,24 @@ h2 {
     display: block;    
 }
 
-.sliderButtonPrev {
-    left: 352px;
+.sliderButton svg {
+    width: 20px;
+    height: 40px;
 }
 
-.sliderButtonNext {
-    right: 204px;
+.btnDesability {
+    fill:  rgba(128, 120, 120, 0.842);
 }
 
-#btnPrev {
-    display:none;
+.btnHability {
+    fill:  rgb(7,76,140);
+    display: block;
+}
+
+.backgroundLeft {
+    background-image:url("images/btnLeftDesability.png");
+}
+
+.backgroundRight {
+    background-image:url("images/btnRightDesability.png");
 }

@@ -26,30 +26,44 @@
                 <div class="headerProdRefBox">
                     Você visitou:
                 </div>
-                <div class="prodRef">
-                    <img class="prodImage" id="prodImage" src="" alt="Prod Ref Image">
-                    <span class="prodName" id="prodName"></span> 
-                    </br>
-                    <label class="prodLabel">Por:</label> <span class="prodPrice" id="prodPrice"></span>
-                    </br>
-                    <span class="prodPayCond" id="prodPayCond"></span>
-                    </br>    
-                    <label class="prodLabel">sem juros</label>   
+                <div class="prodReference">
+                    <div class="prodRecommend-container">
+                        <div class="prodRecommend">
+                            <img class="prodImage" id="prodImage" src="" alt="Prod Ref Image">
+                            <span class="prodName" id="prodName"></span> 
+                            </br>
+                            <label class="prodLabel">Por:</label> <span class="prodPrice" id="prodPrice"></span>
+                            </br>
+                            <span class="prodPayCond" id="prodPayCond"></span>
+                            </br>    
+                            <label class="prodLabel">sem juros</label>   
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="sliderBox" id="sliderBox">
                 <div class="headerSliderBox">
-                    e talvez se interese por:
+                    e talvez se interesse por:
                 </div>
-                <div class="sliderButtonContainer sliderButtonPrev">
-                    <button class="sliderButton" id="btnPrev">❮</button>
-                </div>
-                <div class="recommendList" id="recommendList">
-                    <div class="home-grid prodRecommend-grid prodRecommend-grid--max-3" id="prodGrid" style="left: 0px;">
+                <div class="slider-body">
+                    <div class="sliderButtonContainer">
+                        <button class="sliderButton">
+                            <svg class="backgroundLeft">
+                                <polygon class="btnDesability" id="btnPrev" points="20,0 20,40 0,20"/>
+                            </svg>
+                        </button>
                     </div>
-                </div>
-                <div class="sliderButtonContainer sliderButtonNext">
-                    <button class="sliderButton" id="btnNext">❯</button>
+                    <div class="recommendList" id="recommendList">
+                        <div class="home-grid prodRecommend-grid prodRecommend-grid--max-3" id="prodGrid" style="left: 0px;">
+                        </div>
+                    </div>
+                    <div class="sliderButtonContainer">
+                        <button class="sliderButton">
+                            <svg class="backgroundRight">
+                                <polygon class="btnHability" id="btnNext" points="0,0 0,40 20,20"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>        
             </div>
         <div>

@@ -37,6 +37,7 @@ h2 {
     border: 1px solid rgb(2, 13, 20);
     width:100%;
     height: 280px;
+    display: flex;
 }
 
 .prodRefBox {
@@ -82,4 +83,29 @@ h2 {
     font-size:15px;
     color:red;
     font-weight: bold;
+}
+
+.sliderBox {
+    border: 1px solid rgb(216, 171, 21);
+    height: 280px;
+    width: 100%;
+}
+
+.headerSliderBox {
+    border: 1px solid rgb(11, 14, 158);
+    width: 92.5%;
+    padding: 10px 30px;
+    font-family: arial, sans;
+    font-weight: bold;
+}
+
+.recommendList {
+    display:flex;
+}
+
+.prodRecommend {
+    border: 1px solid rgb(11, 158, 85);
+    width: 20%;
+    padding:5px;
+    height: 200px;
 }

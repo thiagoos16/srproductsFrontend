@@ -100,12 +100,80 @@ h2 {
 }
 
 .recommendList {
-    display:flex;
+    border: 1px solid rgb(70, 20, 206);
+    width:650px;
+    overflow:hidden;
 }
 
-.prodRecommend {
+.home-grid.prodRecommend-grid.prodRecommend-grid--max-3 {
+    transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.prodRecommend-container {
+    display: inline-block;
+    margin: 4px;
+    vertical-align: top;
+    width: 208px;
+}
+
+.prodRecommend-grid .prodRecommend {
     border: 1px solid rgb(11, 158, 85);
-    width: 20%;
+    margin-left: 0;
+    background: white;
     padding:5px;
-    height: 200px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    float: left;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    position: absolute;
+    right: 15%;
+    border-radius: 3px 0 0 3px;
+}
+
+.sliderButtonContainer {
+    bottom: 0;
+    display: block;
+    padding: 0;
+    width: 24px;
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+    border: 1px solid rgba(28, 13, 236, 0.822);
+}
+
+.sliderButton {
+    background-color: transparent;
+    border: 0 none;
+    color: buttontext;
+    cursor: pointer;
+    display: block;    
+}
+
+.sliderButtonPrev {
+    left: 352px;
+}
+
+.sliderButtonNext {
+    right: 204px;
+}
+
+#btnPrev {
+    display:none;
 }

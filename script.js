@@ -30,7 +30,7 @@ function searchItems() {
     const businessId = document.getElementById("businessIdInput").value;
     const url = 'http://localhost:3000/products/' + businessId; 
     
-    const recommendList = document.getElementById('recommendList');
+    const prodGrid = document.getElementById('prodGrid');
     const prodImageAux = document.getElementById('prodImage');
     const prodNameAux = document.getElementById('prodName');
     const prodPriceAux = document.getElementById('prodPrice');
@@ -50,7 +50,8 @@ function searchItems() {
         return itensRecommend.map(function(item) {
             var i = 1;
             
-            let div = createNode('div'),
+            let divContainer = createNode('div'),
+                divItem = createNode('div'),
                 itemImage = createNode('img'),
                 itemName = createNode('span'),
                 itemLabel01 = createNode('label'),
@@ -61,6 +62,9 @@ function searchItems() {
                 br2 = createNode('br');
                 br3 = createNode('br');
                 br4 = createNode('br');
+
+            divContainer.className = "prodRecommend-container";
+            divItem.className = "prodRecommend";
 
             itemImage.className = "prodImage";
             itemImage.id = "prodImage" + i;
@@ -84,24 +88,23 @@ function searchItems() {
             itemLabel02.className = "prodLabel";
             itemLabel02.innerHTML = "sem juros";
 
-            div.className = "prodRecommend";
-
             br1.id = "br1";
             br2.id = "br2";
             br3.id = "br3";
             br4.id = "br4";
 
-            append(div, itemImage);
-            append(div, br1);
-            append(div, itemName);
-            append(div, br2);
-            append(div, itemLabel01);
-            append(div, itemPrice);
-            append(div, br3);
-            append(div, itemPayCond);
-            append(div, br4);
-            append(div, itemLabel02);
-            append(recommendList, div);
+            append(divItem, itemImage);
+            append(divItem, br1);
+            append(divItem, itemName);
+            append(divItem, br2);
+            append(divItem, itemLabel01);
+            append(divItem, itemPrice);
+            append(divItem, br3);
+            append(divItem, itemPayCond);
+            append(divItem, br4);
+            append(divItem, itemLabel02);
+            append(divContainer, divItem);
+            append(prodGrid, divContainer);
         })
     })
     .catch(error => console.log(error))

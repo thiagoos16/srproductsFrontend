@@ -6,7 +6,13 @@ function append(parent, el) {
     return parent.appendChild(el);
 }
 
+function reloadPage() {
+
+}
+
 function searchItems() {
+
+
     const businessId = document.getElementById("businessIdInput").value;
     const url = 'http://localhost:3000/products/' + businessId; 
     
@@ -15,6 +21,7 @@ function searchItems() {
     const prodNameAux = document.getElementById('prodName');
     const prodPriceAux = document.getElementById('prodPrice');
     const prodPayCondAux = document.getElementById('prodPayCond');
+    const prodLink = document.getElementById('prodLink');
 
     fetch(url)
     .then(resp => resp.json())
@@ -24,6 +31,7 @@ function searchItems() {
         prodNameAux.innerHTML = `${prodRef.name}`;
         prodPriceAux.innerHTML = `${prodRef.price}`;
         prodPayCondAux.innerHTML = `${prodRef.productInfo.paymentConditions}`;
+        prodLink.href = prodRef.detailUrl;
 
         itensRecommend = result.data.recommendation;
 
@@ -38,6 +46,7 @@ function searchItems() {
                 itemPrice = createNode('span'),
                 itemPayCond = createNode('span'),
                 itemLabel02 = createNode('label');
+                a = createNode('a');
                 br1 = createNode('br');
                 br2 = createNode('br');
                 br3 = createNode('br');
@@ -68,6 +77,9 @@ function searchItems() {
             itemLabel02.className = "prodLabel";
             itemLabel02.innerHTML = "sem juros";
 
+            a.className = "prodLink";
+            a.href = item.detailUrl;
+
             br1.id = "br1";
             br2.id = "br2";
             br3.id = "br3";
@@ -84,7 +96,8 @@ function searchItems() {
             append(divItem, br4);
             append(divItem, itemLabel02);
             append(divContainer, divItem);
-            append(prodGrid, divContainer);
+            append(a, divContainer);
+            append(prodGrid, a);
         })
     })
     .catch(error => console.log(error))

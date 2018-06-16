@@ -14,7 +14,7 @@ input[type=text] {
     font-family: "Courier New", Monospace;
 }
 
-.btnSearch {
+.btn-search {
     width: 10%;
     padding: 12px 0px;
     border-radius: 4px;
@@ -24,7 +24,7 @@ input[type=text] {
     color:white;
 }
 
-.btnSearch:hover {
+.btn-search:hover {
     background-color:#4B0082;
 }
 
@@ -40,13 +40,14 @@ h2 {
     display: flex;
 }
 
-.prodRefBox {
+/* Produto Referência  */
+.prod-ref-box {
     border: 0px solid rgb(158, 11, 80);
     width: 285px;
     height: 280px;
 }
 
-.headerProdRefBox {
+.header-prod-ref-box {
     border: 0px solid rgb(11, 14, 158);
     width: 100%;
     padding: 10px 5px;
@@ -56,38 +57,42 @@ h2 {
     color: rgb(6,104,154)
 }
 
-.prodRef {
-    border: 0px solid rgb(11, 158, 85);
-    width: 94%;
-    padding:5px;
-    height: 200px;
+.prod-reference {
+    border-right: 1px solid rgb(209,209,209);
+    width: 100%;
 }
 
-.prodImage {
+.prod-image {
     width: 65%;
     height: 120px;
     margin-left: 35px;
 }
 
-.prodName {
+.prod-name {
     font-family: arial, sans;
     font-size:12px;
 }
 
-.prodLabel {
+.prod-label {
     font-family: arial, sans;
     font-size:11px;
     color:red;
 }
 
-.prodPrice, .prodPayCond {
+.prod-price, .prod-pay-cond {
     font-family: arial, sans;
     font-size:15px;
     color:red;
     font-weight: bold;
 }
 
-.sliderBox {
+.prod-link {
+    text-decoration:none;
+    color: black;
+}
+
+/* Produtos Recomendados */
+.slider-box {
     border: 0px solid rgb(216, 171, 21);
     height: 280px;
     width: 100%;
@@ -97,7 +102,7 @@ h2 {
     display: flex;
 }
 
-.headerSliderBox {
+.header-slider-box {
     border: 0px solid rgb(11, 14, 158);
     width: 88.9%;
     padding: 10px 30px;
@@ -107,31 +112,26 @@ h2 {
     color: rgb(6,104,154);
 }
 
-.recommendList {
+.recommend-list {
     border: 0px solid rgb(70, 20, 206);
     width:650px;
     overflow:hidden;
 }
 
-.prodReference {
-    border-right: 1px solid rgb(209,209,209);
-    width: 100%;
-}
-
-.home-grid.prodRecommend-grid.prodRecommend-grid--max-3 {
+.prod-recommend-grid.prod-recommend-grid--max-3 {
     transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s;
     position: relative;
     white-space: nowrap;
 }
 
-.prodRecommend-container {
+.prod-container {
     display: inline-block;
     margin: 4px;
     vertical-align: top;
     width: 208px;
 }
 
-.prodReference .prodRecommend, .prodRecommend-grid .prodRecommend {
+.prod-reference .produto, .prod-recommend-grid .produto {
     border: 0px solid rgb(11, 158, 85);
     margin-left: 0;
     background: white;
@@ -140,14 +140,19 @@ h2 {
     float: left;
 }
 
-.sliderButtonContainer {
+.prod-recommend-grid .produto:hover {
+    background: linear-gradient(rgb(215,234,249), white);    
+}
+
+/* Botões do Slide */
+.slider-button-container {
     display: block;
     padding-top: 13%;
     z-index: 1;
     border: 0px solid rgba(28, 13, 236, 0.822);
 }
 
-.sliderButton {
+.slider-button {
     background-color: transparent;
     border: 0 none;
     color: buttontext;
@@ -155,33 +160,24 @@ h2 {
     display: block;    
 }
 
-.sliderButton svg {
+.slider-button svg {
     width: 20px;
     height: 40px;
 }
 
-.btnDesability {
+.btn-desability {
     fill:  rgba(128, 120, 120, 0.842);
 }
 
-.btnHability {
+.btn-hability {
     fill:  rgb(7,76,140);
     display: block;
 }
 
-.backgroundLeft {
-    background-image:url("images/btnLeftDesability.png");
+.background-left {
+    background-image:url("../images/btnLeftDesability.png");
 }
 
-.backgroundRight {
-    background-image:url("images/btnRightDesability.png");
-}
-
-.prodRecommend-grid .prodRecommend:hover {
-    background: linear-gradient(rgb(215,234,249), white);    
-}
-
-.prodLink {
-    text-decoration:none;
-    color: black;
+.background-right {
+    background-image:url("../images/btnRightDesability.png");
 }

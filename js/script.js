@@ -11,17 +11,15 @@ function reloadPage() {
 }
 
 function searchItems() {
-
-
-    const businessId = document.getElementById("businessIdInput").value;
+    const businessId = document.getElementById("business-id-input").value;
     const url = 'http://localhost:3000/products/' + businessId; 
     
-    const prodGrid = document.getElementById('prodGrid');
-    const prodImageAux = document.getElementById('prodImage');
-    const prodNameAux = document.getElementById('prodName');
-    const prodPriceAux = document.getElementById('prodPrice');
-    const prodPayCondAux = document.getElementById('prodPayCond');
-    const prodLink = document.getElementById('prodLink');
+    const prodGrid = document.getElementById('prod-grid');
+    const prodImageAux = document.getElementById('prod-image');
+    const prodNameAux = document.getElementById('prod-name');
+    const prodPriceAux = document.getElementById('prod-price');
+    const prodPayCondAux = document.getElementById('prod-pay-cond');
+    const prodLink = document.getElementById('prod-link');
 
     fetch(url)
     .then(resp => resp.json())
@@ -43,58 +41,78 @@ function searchItems() {
                 itemImage = createNode('img'),
                 itemName = createNode('span'),
                 itemLabel01 = createNode('label'),
+                itemOldPrice = createNode('span'),
+                itemLabel02 = createNode('label'),
                 itemPrice = createNode('span'),
                 itemPayCond = createNode('span'),
-                itemLabel02 = createNode('label');
+                itemLabel03 = createNode('label');
                 a = createNode('a');
                 br1 = createNode('br');
                 br2 = createNode('br');
                 br3 = createNode('br');
                 br4 = createNode('br');
+                br5 = createNode('br');
 
-            divContainer.className = "prodRecommend-container";
-            divItem.className = "prodRecommend";
+            divContainer.className = "prod-container";
+            divItem.className = "produto";
 
-            itemImage.className = "prodImage";
-            itemImage.id = "prodImage" + i;
+            itemImage.className = "prod-image";
+            itemImage.id = "prod-image" + i;
             itemImage.src = item.imageName;
 
-            itemName.className = "prodName";
-            itemName.id = "prodName" + i;
+            itemName.className = "prod-name";
+            itemName.id = "prod-name" + i;
             itemName.innerHTML = `${item.name}`;
 
-            itemLabel01.className = "prodLabel";
-            itemLabel01.innerHTML = "Por:";
+            itemLabel01.className = "prod-name";
+            itemLabel01.innerHTML = "de:";
 
-            itemPrice.className = "prodPrice";
-            itemPrice.id = "prodPrice" + i;
+            if (item.oldPrice != "") {
+                itemOldPrice.className = "prod-name";
+                itemOldPrice.id = "prod-old-price" +i;
+                itemOldPrice.innerHTML = `${item.oldPrice}`;
+            }
+
+            itemLabel02.className = "prod-label";
+            itemLabel02.innerHTML = "Por:";
+
+            itemPrice.className = "prod-price";
+            itemPrice.id = "prod-price" + i;
             itemPrice.innerHTML = `${item.price}`;
 
-            itemPayCond.className = "prodPayCond";
-            itemPayCond.id = "prodPayCond" + i;
+            itemPayCond.className = "prod-pay-cond";
+            itemPayCond.id = "prod-pay-cond" + i;
             itemPayCond.innerHTML = `${item.productInfo.paymentConditions}`;
 
-            itemLabel02.className = "prodLabel";
-            itemLabel02.innerHTML = "sem juros";
+            itemLabel03.className = "prod-label";
+            itemLabel03.innerHTML = "sem juros";
 
-            a.className = "prodLink";
+            a.className = "prod-link";
             a.href = item.detailUrl;
 
             br1.id = "br1";
             br2.id = "br2";
             br3.id = "br3";
             br4.id = "br4";
+            br5.id = "br5";
 
             append(divItem, itemImage);
             append(divItem, br1);
             append(divItem, itemName);
-            append(divItem, br2);
-            append(divItem, itemLabel01);
-            append(divItem, itemPrice);
+
+            if (item.oldPrice != "") {
+                append(divItem, br2);
+                append(divItem, itemLabel01);
+                append(divItem, itemOldPrice);
+            }
+
             append(divItem, br3);
-            append(divItem, itemPayCond);
-            append(divItem, br4);
             append(divItem, itemLabel02);
+            append(divItem, itemPrice);
+            append(divItem, br4);
+            append(divItem, itemPayCond);
+            append(divItem, br5);
+            append(divItem, itemLabel03);
             append(divContainer, divItem);
             append(a, divContainer);
             append(prodGrid, a);
